@@ -1,0 +1,23 @@
+* {
+	box-sizing: border-box;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+}
+body{
+	background-image: url(../img/wall-156.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#contenedor{
+	height: 100vh;
+}
+.botones{
+	position: fixed;
+	bottom: 50px;
+}
+.bottom-aligned {
+    display: flex;
+    align-items: flex-end;
+}
