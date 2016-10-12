@@ -5,19 +5,24 @@
 	overflow: hidden;
 }
 body{
+	background-color: #F5ECCE;
+	height: 100vh;
+	width: 100%;
+}
+#contenedor{
 	background-image: url(../img/wall-156.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-}
-#contenedor{
 	height: 100vh;
+	width: 100%;
+	position: relative;
 }
-.botones{
-	position: fixed;
-	bottom: 50px;
+.box-btn {
+	position: absolute;
+	bottom: 3%;
+	width: 100%;
 }
-.bottom-aligned {
-    display: flex;
-    align-items: flex-end;
+.flecha {
+	font-size: 2em;
 }
