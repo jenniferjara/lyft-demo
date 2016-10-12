@@ -1,0 +1,17 @@
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.borde-gris{
+	border-bottom: 1px solid #848484;
+}
+.p-relative{
+	position: relative;
+}
+.vh{
+	height: 100vh;
+}
+.m-top{
+	margin-top: 5%;
+}
