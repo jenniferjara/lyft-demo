@@ -1,8 +1,4 @@
 //Validacion de numero telefónico
-var random = function(){
-	var numRandom = Math.round(Math.random()*899)+100;
-	alert("LAB " + numRandom);
-}
 $(document).ready(function(){
 	$("#numero").keydown(function(e){
 		var ascii = e.keyCode;
@@ -14,15 +10,24 @@ $(document).ready(function(){
 	});
 	$("#numero").keyup(function(e){
 		var long = $(this).val().length;
-		if(long === 9){
-			$("#next").click(random);
+		if(long == 9){
 			$("#next").attr("href", "signup2.html")
 		}else{
 			$("#next").removeAttr("href");
+			$(this).addClass("bg-danger");
 		}
 	});
+	$("#next").click(function(){
+		var cant = $("#numero").val().length;
+		if(cant == 9){
+			var numRandom = Math.round(Math.random()*899)+100;
+			alert("LAB " + numRandom);
+		}
+	})
+	$("#numero").val("");
 	
 });
+
 /*var iniciar = function(){
 	var $celular = $("#numero");
 	var $next = $("#next");

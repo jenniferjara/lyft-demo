@@ -1,0 +1,29 @@
+/*-------Sing Up 1------*/
+.flecha {
+	font-size: 1.5em;
+    padding: 1.5em 0px;
+    position: absolute;
+    left: 20px;
+}
+.titulo{
+	font-weight: 700;
+	font-size: 2em;
+	padding: 0.5em 0px;
+	margin: 0px;
+}
+.input-drop{
+	margin: 1em 0;
+}
+.btn-next{
+	background-color: #EC7357;
+	color: #fff;
+	padding: 4%;
+	font-size: 2em;
+	text-align: center;
+	display: block;
+}
+.flag{
+	background-color: yellow;
+	margin: 3%;
+	padding: 6%;
+}

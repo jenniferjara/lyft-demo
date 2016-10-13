@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Lyft - Log in</title>
+	<title>Lyft - Sign up</title>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link type="text/css" rel="shortcut icon" href="favicon.ico">
-	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
 	<link type="text/css" rel="stylesheet" href="css/utilities.css">
-	<link type="text/css" rel="stylesheet" href="css/main.css">
+	<link type="text/css" rel="stylesheet" href="css/signup.css">
 </head>
-<body>
-	<div class="container vh p-relative">
-		<div class="row borde-gris">
-			<div class="col-xs-12 text-center">
-				<a class="flecha" href="index.html">
-					<span class="glyphicon glyphicon glyphicon-menu-left"></span>
-				</a>
-				<h2>Sign up</h2>
-				<p>Join now for free ride credit</p>
+<body class="p-vh text-center">
+	<section id="encabezado" class="borde-gris">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<a class="flecha" href="signup.html">
+						<span class="glyphicon glyphicon glyphicon-menu-left"></span>
+					</a>
+					<h2>Sign up</h2>
+					<p>Join now for free ride credit</p>
+				</div>
 			</div>
 		</div>
+	</section>
+	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">
-				<form class="input-group input-drop">
+			<div class="col-xs-12 formulario">
+				<div class="input-group">
+					<div class="input-group-btn">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><!--<img class="bandera" src="img/peru.png" alt="Perú">--><span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						</ul>
+					</div>
+					<span id ="codigoPostal" class="input-group-addon">+51</span>
 					<input type="tel" class="form-control" id="numero" placeholder="123 456 789">
-				</form>
+				</div>
 			</div>
-			<div class="col-xs-12 text-center">We'll send a text to verify your phone</div>
-		</div>
-		<div class="row box-btn">
-			<div class="col-xs-12">
-				<a id="next" class="btn-next" href="#">Next</a>
-			</div>			
+			<div class="col-xs-12 text-center formulario">We'll send a text to verify your phone</div>
 		</div>
 	</div>
+	<section id="enviar">
+		<div class="box-btn">
+			<a class="btn-next" href="#">Next</a>	
+		</div>
+	</section>
 	
-
 	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>

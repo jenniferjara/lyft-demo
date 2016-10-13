@@ -9,19 +9,14 @@ body{
 	width: 100%;
 }
 #contenedor{
-	background-image: url(../img/wall-156.jpg);
+	background-image: url(../img/wall.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 100vh;
 	width: 100%;
 }
-.box-btn {
-	position: absolute;
-	bottom: 0%;
-	width: 100%;
-}
-.btn-sl{
+.btn-inicio{
 	color: #fff;
 	border: 1px solid #fff;
 	padding: 5% 12%;
@@ -29,45 +24,7 @@ body{
 	margin-bottom: 15%;
 	border-radius: 5px;
 }
-/*-------Sing Up 1------*/
-.flecha {
-	font-size: 1.5em;
-    padding: 1.5em 0px;
-    position: absolute;
-    left: 20px;
-}
-.titulo{
-	font-weight: 700;
-	font-size: 2em;
-	padding: 0.5em 0px;
-	margin: 0px;
-}
-.input-drop{
-	margin: 1em 0;
-}
-.btn-next{
-	background-color: #EA0B8C;
-	color: #fff;
-	padding: 4%;
-	font-size: 2em;
-	text-align: center;
-	display: block;
-}
-.flag{
-	background-color: yellow;
-	margin: 3%;
-	padding: 6%;
-}
-/*-----------Sing Up 2----------------*/
-.formulario{
-	margin: 3% 0;
-}
-.form-control {
-  padding-right: 30px;
-}
-
-.form-control + .glyphicon {
-  position: absolute;
-  left: 0;
-  padding: 8px 27px;
+.logo{
+	width: 50%;
+	margin-top: 8em;
 }
