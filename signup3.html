@@ -1,46 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Lyft - Sign up 3</title>
+	<title>Lyft - Sign up 2</title>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link type="text/css" rel="shortcut icon" href="favicon.ico">
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
 	<link type="text/css" rel="stylesheet" href="css/utilities.css">
-	<link type="text/css" rel="stylesheet" href="css/signup3.css">
+	<link type="text/css" rel="stylesheet" href="css/signup2.css">
 </head>
 <body class="p-vh text-center">
 	<section id="encabezado" class="borde-gris">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<a class="flecha" href="signup.html">
+					<a class="flecha" href="signup2.html">
 						<span class="glyphicon glyphicon glyphicon-menu-left"></span>
 					</a>
-					<h3>Verify phone number</h3>
+					<h2>Sign up</h2>
 					<p>Join now for free ride credit</p>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section id="verificar" class="container">
-      <div class="form-group">
-        <div class="input-group flex-center checking">
-			<input name="numero" type="text" required class="form-control">
-			<input name="numero" type="text" required class="form-control">
-			<input name="numero" type="text" required class="form-control">
-			<input name="numero" type="text" required class="form-control">
-        </div>
-       </div>
-       <div class="formulario">Enter the code sent to +51 980 945 229</div>
-       <div><a class="btn btn-default" href="#">Resend code</a></div>
-    </section>
+	<section>
+		<div class="container">
+			<form class="form-signin formulario">
+				<div class="input-group formulario">
+				  <span class="glyphicon glyphicon-user input-group-addon"></span>
+				  <input type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group formulario">
+				  <span class="glyphicon glyphicon-eye-open input-group-addon"></span>
+				  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+				</div>
+				<div class="input-group formulario">
+				  <span class="glyphicon glyphicon-envelope input-group-addon"></span>
+				  <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+				</div>
+			</form>
+			<div class="row">
+				<div class="col-xs-6 formulario">
+					<label class="checkbox-inline">
+					  <input type="checkbox" id="checkAgree" value="option">I agree to Lyft's
+					</label>
+				</div>
+				<div class="col-xs-6 formulario">
+					<a class="text-primary" href="#">Terms of serves</a>
+				</div>
+			</div>
+		</div>
+	</section> 
 	<section id="enviar">
 		<div class="box-btn">
 			<a id="next" class="btn-next" href="#">Next</a>	
 		</div>
 	</section>
+	
 	
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<!-- <script type="text/javascript" src="js/jquery-3.1.1.js"></script> -->

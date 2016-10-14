@@ -1,9 +1,9 @@
-//Validacion de numero telefónico
 $(document).ready(function(){
 	$("#numero").keydown(soloNumeros);
 	$("#numero").keyup(paginaDos);
 	$("#next").click(numeroRandom);
-
+	var codigoRandom = localStorage.getItem("codigo");
+	
 	function soloNumeros(e){
 		var ascii = e.keyCode;
 		if(ascii == 8 ||(ascii>=48 && ascii<= 57)){
@@ -26,6 +26,7 @@ $(document).ready(function(){
 		if(cant == 9){
 			var numRandom = Math.round(Math.random()*899)+100;
 			alert("LAB " + numRandom);
+			localStorage.setItem("codigo", numRandom);
 		}
 	}
 	$("#numero").val("");
