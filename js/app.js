@@ -3,6 +3,8 @@ $(document).ready(function(){
 	$("#numero").keyup(cambioPagina);
 	$("#next").click(numeroRandom);
 	var $inputs = $("#check").children();
+	$("#codUno").focus();
+	$inputs.keyup(alarma);
 	$("#verificaCod").click(verificaCodigo);
 
 	var codigoRandom = localStorage.getItem("codigo");
@@ -30,6 +32,11 @@ $(document).ready(function(){
 			var numRandom = Math.round(Math.random()*899)+100;
 			alert("LAB " + numRandom);
 			localStorage.setItem("codigo", numRandom);
+		}
+	}
+	function alarma(){
+		if($(this).val().length===1){
+			$(this).next().focus();
 		}
 	}
 	function verificaCodigo(){
