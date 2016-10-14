@@ -1,14 +1,18 @@
 //Validacion de numero telefónico
 $(document).ready(function(){
-	$("#numero").keydown(function(e){
+	$("#numero").keydown(soloNumeros);
+	$("#numero").keyup(paginaDos);
+	$("#next").click(numeroRandom);
+
+	function soloNumeros(e){
 		var ascii = e.keyCode;
 		if(ascii == 8 ||(ascii>=48 && ascii<= 57)){
 			return true;
 		} else{
 			return false;
 		}
-	});
-	$("#numero").keyup(function(e){
+	}
+	function paginaDos(e){
 		var long = $(this).val().length;
 		if(long == 9){
 			$("#next").attr("href", "signup2.html")
@@ -16,14 +20,14 @@ $(document).ready(function(){
 			$("#next").removeAttr("href");
 			$(this).addClass("bg-danger");
 		}
-	});
-	$("#next").click(function(){
+	}
+	function numeroRandom(){
 		var cant = $("#numero").val().length;
 		if(cant == 9){
 			var numRandom = Math.round(Math.random()*899)+100;
 			alert("LAB " + numRandom);
 		}
-	})
+	}
 	$("#numero").val("");
 	
 });
