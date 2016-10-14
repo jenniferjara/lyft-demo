@@ -1,7 +1,10 @@
 $(document).ready(function(){
 	$("#numero").keydown(soloNumeros);
-	$("#numero").keyup(paginaDos);
+	$("#numero").keyup(cambioPagina);
 	$("#next").click(numeroRandom);
+	var $inputs = $("#check").children();
+	$("#verificaCod").click(verificaCodigo);
+
 	var codigoRandom = localStorage.getItem("codigo");
 	
 	function soloNumeros(e){
@@ -12,13 +15,13 @@ $(document).ready(function(){
 			return false;
 		}
 	}
-	function paginaDos(e){
+	function cambioPagina(){
 		var long = $(this).val().length;
 		if(long == 9){
 			$("#next").attr("href", "signup2.html")
 		}else{
 			$("#next").removeAttr("href");
-			$(this).addClass("bg-danger");
+			$(this).addClass("error");
 		}
 	}
 	function numeroRandom(){
@@ -27,6 +30,17 @@ $(document).ready(function(){
 			var numRandom = Math.round(Math.random()*899)+100;
 			alert("LAB " + numRandom);
 			localStorage.setItem("codigo", numRandom);
+		}
+	}
+	function verificaCodigo(){
+		var codUno = $("#codUno").val();
+		var codDos = $("#codDos").val();
+		var codTres = $("#codTres").val();
+		var juntos = codUno+codDos+codTres;
+		if(juntos==codigoRandom){
+			$("#verificaCod").attr("href", "signup3.html")
+		}else{
+			alert(":(")
 		}
 	}
 	$("#numero").val("");

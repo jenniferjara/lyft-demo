@@ -1,10 +1,7 @@
-/*-----------Sing Up 2----------------*/
-.form-control {
-  padding-right: 30px;
+/*----------Sign up 3--------------*/
+.checking {
+	padding: 5% 3%;
 }
-
-.form-control + .glyphicon {
-  position: absolute;
-  left: 0;
-  padding: 8px 27px;
+.checking input {
+    padding: 5% !important;
 }
