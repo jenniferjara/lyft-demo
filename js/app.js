@@ -1,14 +1,17 @@
 $(document).ready(function(){
+	var codigoRandom = localStorage.getItem("codigo");
+	var mostrarCelular = localStorage.getItem("numeroCelular");
 	$("#numero").keydown(soloNumeros);
 	$("#numero").keyup(cambioPagina);
 	$("#next").click(numeroRandom);
+	$("#nuevoCelular").text(mostrarCelular);
 	var $inputs = $("#check").children();
 	$("#codUno").focus();
+	$inputs.keydown(soloNumeros);
 	$inputs.keyup(alarma);
+
 	$("#verificaCod").click(verificaCodigo);
 
-	var codigoRandom = localStorage.getItem("codigo");
-	
 	function soloNumeros(e){
 		var ascii = e.keyCode;
 		if(ascii == 8 ||(ascii>=48 && ascii<= 57)){
@@ -21,6 +24,7 @@ $(document).ready(function(){
 		var long = $(this).val().length;
 		if(long == 9){
 			$("#next").attr("href", "signup2.html")
+			localStorage.setItem("numeroCelular", $(this).val());
 		}else{
 			$("#next").removeAttr("href");
 			$(this).addClass("error");
@@ -50,6 +54,7 @@ $(document).ready(function(){
 			alert(":(")
 		}
 	}
+
 	$("#numero").val("");
 	
 });
