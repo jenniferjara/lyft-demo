@@ -1,16 +1,20 @@
 $(document).ready(function(){
 	var codigoRandom = localStorage.getItem("codigo");
 	var mostrarCelular = localStorage.getItem("numeroCelular");
+
 	$("#numero").keydown(soloNumeros);
 	$("#numero").keyup(cambioPagina);
 	$("#next").click(numeroRandom);
 	$("#nuevoCelular").text(mostrarCelular);
+
 	var $inputs = $("#check").children();
 	$("#codUno").focus();
 	$inputs.keydown(soloNumeros);
 	$inputs.keyup(alarma);
 
 	$("#verificaCod").click(verificaCodigo);
+
+	$("#nombre").keyup(validaNombre);	
 
 	function soloNumeros(e){
 		var ascii = e.keyCode;
@@ -27,7 +31,6 @@ $(document).ready(function(){
 			localStorage.setItem("numeroCelular", $(this).val());
 		}else{
 			$("#next").removeAttr("href");
-			$(this).addClass("error");
 		}
 	}
 	function numeroRandom(){
@@ -38,9 +41,12 @@ $(document).ready(function(){
 			localStorage.setItem("codigo", numRandom);
 		}
 	}
-	function alarma(){
+	function alarma(e){
 		if($(this).val().length===1){
 			$(this).next().focus();
+		}
+		if(e.keyCode == 8){
+			$(this).prev().focus();
 		}
 	}
 	function verificaCodigo(){
@@ -50,11 +56,26 @@ $(document).ready(function(){
 		var juntos = codUno+codDos+codTres;
 		if(juntos==codigoRandom){
 			$("#verificaCod").attr("href", "signup3.html")
-		}else{
-			alert(":(")
+		}else if(codUno == 0 || codDos == 0 || codTres == 0){
+			alert("Ingrese código completo");
 		}
 	}
-
+	function validaNombre(){
+		var largo = $(this).val().trim().length == 0;
+		var letras = /^[A-Za-z]+$/gi;
+		var soloLetras = letras.test($(this));
+		if(largo && soloLetras){
+			return true;
+			alert(":)");
+		}else{
+			return false;
+			alert(":(");
+		}
+	}
+	function ValidateEmail() {
+        var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        return expr.test();
+    };
 	$("#numero").val("");
 	
 });
