@@ -1,5 +1,6 @@
 var codigoRandom = localStorage.getItem("codigo");
 var mostrarCelular = localStorage.getItem("numeroCelular");
+
 var iniciar = function(){
 	$("#numero").keydown(soloNumeros);
 	$("#numero").keyup(cambioPagina);
@@ -10,31 +11,31 @@ var iniciar = function(){
 	$("#codUno").focus();
 	$inputs.keydown(soloNumeros);
 	$inputs.keyup(alarma);
-
 	$("#verificaCod").click(verificaCodigo);
+	$("#map").click(validarDatos);
 
-	//$("#nombre").keyup(validaNombre);	
-	$("#numero").val("");
-	$inputs.val("");
+	$("#viewPerfil").click(verPerfil);
+	$("#miPerfil").click(verMapa);
+	$("input").val("");
 }
 var soloNumeros = function(e){
 	var ascii = e.keyCode;
-	if(ascii == 8 ||(ascii>=48 && ascii<= 57)){
+	if(ascii == 8 ||(ascii >= 48 && ascii <= 57)){
 		return true;
 	} else{
 		return false;
 	}
-}
+};
 var cambioPagina = function(){
-	var long = $(this).val().length;
-	if(long == 9){
+	var long = $(this).val();
+	if(long.length == 9){
 		$("#next").attr("href", "signup2.html")
 		$(this).attr("maxlength", "9")
 		localStorage.setItem("numeroCelular", $(this).val());
 	}else{
 		$("#next").removeAttr("href");
 	}
-}
+};
 var numeroRandom = function(){
 	var cant = $("#numero").val().length;
 	if(cant == 9){
@@ -42,18 +43,18 @@ var numeroRandom = function(){
 		alert("LAB " + numRandom);
 		localStorage.setItem("codigo", numRandom);
 	}
-}
+};
 var alarma = function(e){
-	if($(this).val().length === 1){
+	var digito = $(this).val();
+	if(digito.length == 1){
 		$(this).next().focus();
-		$(this).attr("maxlength", "1");
-	}else{
-		$(this).attr("maxlength", "1");
-	}
-	if(e.keyCode == 8){
+		return true;
+	}else if(digito.length > 1){
+		return false;
+	}else if(e.keyCode == 8){
 		$(this).prev().focus();
 	}
-}
+};
 var verificaCodigo = function(){
 	var codUno = $("#codUno").val();
 	var codDos = $("#codDos").val();
@@ -64,21 +65,41 @@ var verificaCodigo = function(){
 	}else if(codUno == null || codDos == null || codTres == null){
 		alert("Ingrese código completo");
 	}
-}
-/*function validaNombre(){
-		var largo = $(this).val().trim().length == 0;
-		var letras = /^[A-Za-z]+$/gi;
-		var soloLetras = letras.test($(this));
-		if(largo && soloLetras){
-			return true;
-			alert(":)");
-		}else{
-			return false;
-			alert(":(");
-		}
+};
+var validarDatos = function(e){
+	var regexNombre = /^[a-zñáéíóúü]+$/gi;
+	var regexApellido = /^[a-zñáéíóúü]+$/gi;
+	var regexCorreo = /^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/;
+
+	var nombreUser = $("#nombre").val();
+	var longNombre = nombreUser.trim().length;
+	var resultNombre = regexNombre.test(nombreUser);
+
+	var apellidoUser = $("#apellido").val();
+	var longApellido = apellidoUser.trim().length;
+	var resultApellido = regexApellido.test(apellidoUser);
+
+	var mailUser = $("#mail").val();
+	var longMail = mailUser.trim().length;
+	var resultMail = regexCorreo.test(mailUser);
+	var agree = $("#checkAgree");
+	
+	if((longNombre >= 2 && longNombre <= 20 && resultNombre) &&
+		(longApellido >= 2 && longApellido <= 20 && resultApellido) &&
+		(longMail >= 5 && longMail <= 50 && resultMail) &&
+		agree.prop("checked")) {
+		$(this).attr("href", "mapa.html")
+		return true;
+	}else{
+		alert("Ingrese datos correctos");
+		return false;
 	}
-	function ValidateEmail() {
-        var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-        return expr.test();
-    };*/
+};
+var verPerfil = function(){
+	$("#miPerfil").remove("dNone").toggle("slow");
+}
+var verMapa = function(){
+	$("#miPerfil").addClass("dNone").toggle("slow");
+}
+
 $(document).ready(iniciar);

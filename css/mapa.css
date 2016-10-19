@@ -1,0 +1,62 @@
+.mapa{
+	height: 100vh;
+	width: 100vw;
+}
+.z-index{
+	z-index: 100;
+}
+.iconCircle{
+	border-radius: 50%;
+	background-color: white;
+	border: 1px solid gray;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	position: relative;
+	top: 10px;
+	left: 4%;
+}
+.icons{
+	text-decoration: none;
+	font-size: 24px;
+	color: #000;
+	margin: 20% 0% 0% 23%;
+}
+.logoCentro{
+	display: inline-block;
+    position: absolute;
+    left: 45%;
+    top: 15px;
+}
+.logoMapa{
+	width: 50px;
+	height: 50px;
+}
+.perfil{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 100;
+}
+.perfilContenido{
+	position: absolute;
+    height: 100vh;
+    width: 70%;
+    background-color: #fff;
+}
+.p5{
+	padding: 5%;
+}
+.imgUser{
+	border-radius: 50%;
+    border: 1px solid #bbb;
+    padding: 1%;
+    width: 50%;
+}
+.fondoGris{
+	background-color: #72809A;
+}
+.colorWhite{
+	color: #fff;
+}

@@ -8,11 +8,64 @@
 	<link type="text/css" rel="shortcut icon" href="favicon.ico">
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
 	<link type="text/css" rel="stylesheet" href="css/utilities.css">
-	<link type="text/css" rel="stylesheet" href="css/signup.css">
+	<link type="text/css" rel="stylesheet" href="css/mapa.css">
 </head>
-<body class="p-vh text-center">
-	<section>
-		<div id="miMapa"></div>
-	</section>
+<body class="p-vh">
+	<div class="box-span z-index">
+		<div class="iconCircle">
+			<a id="viewPerfil" class="glyphicon glyphicon-user icons"></a>
+		</div>
+		<div class="logoCentro">
+			<img src="img/logo.png" alt="logo" class="logoMapa">
+		</div>
+	</div>
+	<div id="miPerfil" class="perfil dNone">
+		<div class="perfilContenido">
+			<div class="borde-gris text-center p5">
+				<div>
+					<img src="img/user.png" alt="usuario" class="imgUser">
+				</div>
+				<h3>Nombre del usuario</h3>
+				<a href="perfil.html">View profile</a>
+			</div>
+			<div class="borde-gris p5">
+				<span class="glyphicon glyphicon-home"></span>
+				<span>Home</span>
+			</div>
+			<div class="borde-gris p5">
+				<span class="glyphicon glyphicon-gift"></span>
+				<span>Free Rides</span>
+			</div>
+			<div class="borde-gris p5">
+				<span class="glyphicon glyphicon-repeat"></span>
+				<span>Ride history</span>
+			</div>
+			<div class="borde-gris p5">
+				<span class="glyphicon glyphicon-credit-card"></span>
+				<span>Payment</span>
+			</div>
+			<div class="borde-gris p5">
+				<span class="glyphicon glyphicon-question-sign"></span>
+				<span>Help</span>
+			</div>
+			<div class="borde-gris p5">
+				<span class="glyphicon glyphicon-cog"></span>
+				<span>Settings</span>
+			</div>
+			<div class="fondoGris p5">
+				<span class="glyphicon glyphicon-map-marker colorWhite"></span>
+				<span class="colorWhite">Sign uo to drive</span>
+			</div>
+		</div>
+	</div>
+	<div id="mapa" class="mapa"></div>
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD2XfauYoevDrYbmPFx4q46eNtZC254Uw"
+  async defer></script>
+	<script type="text/javascript" src="js/gmaps.js"></script>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/map.js"></script>
 </body>
 </html>

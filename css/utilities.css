@@ -13,6 +13,9 @@
 .m-top{
 	margin-top: 5%;
 }
+.dNone{
+	display: none;
+}
 /**********************/
 .btn-next{
 	background-color: #EC7357;
@@ -21,6 +24,11 @@
 	font-size: 2em;
 	text-align: center;
 	display: block;
+}
+.btn-next:hover {
+	background-color: #fff;
+	color: #000;
+	text-decoration: none;
 }
 .box-btn {
 	position: absolute;
@@ -36,7 +44,11 @@
     position: absolute;
     left: 20px;
 }
-/*********************/
+.box-span{
+	position: absolute;
+	top: 0px;
+	width: 100%;
+}
 .error{
 	box-shadow: 1px 2px 4px rgba(254, 0, 0, .5);
 }
