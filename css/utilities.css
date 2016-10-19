@@ -16,6 +16,24 @@
 .dNone{
 	display: none;
 }
+.mayus{
+	text-transform: uppercase;
+}
+.p5{
+	padding: 5%;
+}
+.fondoGris{
+	background-color: #72809A;
+}
+.colorWhite{
+	color: #fff;
+}
+.z-index{
+	z-index: 100;
+}
+.textoGris{
+	color: #BDBDBD;
+}
 /**********************/
 .btn-next{
 	background-color: #EC7357;
@@ -46,9 +64,5 @@
 }
 .box-span{
 	position: absolute;
-	top: 0px;
 	width: 100%;
-}
-.error{
-	box-shadow: 1px 2px 4px rgba(254, 0, 0, .5);
 }
