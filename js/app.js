@@ -17,6 +17,7 @@ var iniciar = function(){
 	$("#viewPerfil").click(verPerfil);
 	$("#miPerfil").click(verMapa);
 	$("input").val("");
+	$("input:checkbox").prop("checked", false);
 }
 var soloNumeros = function(e){
 	var ascii = e.keyCode;
