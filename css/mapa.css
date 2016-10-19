@@ -11,12 +11,12 @@
 	display: inline-block;
 }
 .ladoIzq{
-	position: relative;
+	position: absolute;
 	top: 10px;
 	left: 4%;
 }
 .ladoDer{
-	position: relative;
+	position: absolute;
 	top: 10px;
 	right: 4%
 }

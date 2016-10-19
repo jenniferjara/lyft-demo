@@ -8,23 +8,28 @@ var cargarPagina = function() {
 var funcionExito = function(posicion) {
 	var lat = posicion.coords.latitude;
     var lon = posicion.coords.longitude;
-    var mapa = new GMaps({
-	  div: '#mapa',
-	  lat: lat,
-	  lng: lon
-	});
-	mapa.addMarker({
-	  lat: lat,
-	  lng: lon,
-	  title: 'Lima',
-	  click: function(e) {
-	    alert('You clicked in this marker');
-	  }
-	});
+    var latLong = new google.maps.LatLng(lat, lon);
+	$("#mapa").addClass("mapa");
+    var myOptions = {
+	    center: latLong,zoom:14,
+	    mapTypeId: google.maps.MapTypeId.ROADMAP,
+	    mapTypeControl: false,
+	    navigationControlOptions:{
+	    	style: google.maps.NavigationControlStyle.SMALL
+	   	}
+    };
+    
+    var map = new google.maps.Map(document.getElementById('mapa'), myOptions);
+
+    var marker = new google.maps.Marker({
+    	position: latLong,
+    	map: map,
+    	title:"Tú estas aquí!"
+    });
 };
 
 var funcionError = function (error) {
-	console.log(error);
+	console.log("Error");
 };
 
 $(document).ready(cargarPagina);
