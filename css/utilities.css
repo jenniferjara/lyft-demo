@@ -35,15 +35,14 @@
 	color: #BDBDBD;
 }
 /**********************/
-.btn-next{
+.btnNext{
 	background-color: #EC7357;
-	color: #fff;
-	padding: 3%;
-	font-size: 2em;
-	text-align: center;
-	display: block;
+    color: white;
+    width: 100%;
+    padding: 2%;
+    font-size: 1.5em;
 }
-.btn-next:hover {
+.btnNext:hover {
 	background-color: #fff;
 	color: #000;
 	text-decoration: none;
