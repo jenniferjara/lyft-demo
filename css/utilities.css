@@ -11,7 +11,7 @@
 	height: 100vh;
 }
 .m-top{
-	margin-top: 5%;
+	margin-top: 3%;
 }
 .dNone{
 	display: none;
@@ -29,7 +29,7 @@
 	color: #fff;
 }
 .z-index{
-	z-index: 100;
+	z-index: 4;
 }
 .textoGris{
 	color: #BDBDBD;
@@ -37,14 +37,13 @@
 /**********************/
 .btnNext{
 	background-color: #EC7357;
-    color: white;
+    color: #fff;
     width: 100%;
     padding: 2%;
     font-size: 1.5em;
 }
 .btnNext:hover {
-	background-color: #fff;
-	color: #000;
+	color: #fff;
 	text-decoration: none;
 }
 .box-btn {
