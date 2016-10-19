@@ -1,5 +1,8 @@
 var codigoRandom = localStorage.getItem("codigo");
 var mostrarCelular = localStorage.getItem("numeroCelular");
+var mostrarNombre = localStorage.getItem("nombreUsuario");
+var mostrarApellido = localStorage.getItem("apellidoUsuario");
+var mostrarMail = localStorage.getItem("correoUsuario");
 
 var iniciar = function(){
 	$("#numero").keydown(soloNumeros);
@@ -16,6 +19,10 @@ var iniciar = function(){
 
 	$("#viewPerfil").click(verPerfil);
 	$("#miPerfil").click(verMapa);
+	$("#nomUsuario").text(mostrarNombre.charAt(0).toUpperCase() + mostrarNombre.slice(1).toLowerCase());
+	$("#fullName").text(mostrarNombre.charAt(0).toUpperCase() + mostrarNombre.slice(1).toLowerCase() + " " + 
+						mostrarApellido.charAt(0).toUpperCase() + mostrarApellido.slice(1).toLowerCase());
+
 	$("input").val("");
 	$("input:checkbox").prop("checked", false);
 }
@@ -75,14 +82,17 @@ var validarDatos = function(e){
 	var nombreUser = $("#nombre").val();
 	var longNombre = nombreUser.trim().length;
 	var resultNombre = regexNombre.test(nombreUser);
+	localStorage.setItem("nombreUsuario", nombreUser);
 
 	var apellidoUser = $("#apellido").val();
 	var longApellido = apellidoUser.trim().length;
 	var resultApellido = regexApellido.test(apellidoUser);
+	localStorage.setItem("apellidoUsuario", apellidoUser);
 
 	var mailUser = $("#mail").val();
 	var longMail = mailUser.trim().length;
 	var resultMail = regexCorreo.test(mailUser);
+	localStorage.setItem("correoUsuario", mailUser);
 	var agree = $("#checkAgree");
 	
 	if((longNombre >= 2 && longNombre <= 20 && resultNombre) &&
