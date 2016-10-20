@@ -1,8 +1,8 @@
 .iconBack{
 	font-size: 28px;
 	position: absolute;
-	left: 25px;
-    top: 30px;
+	left: 20px;
+    top: 20px;
     text-decoration: none;
 }
 .iconBack:hover{
@@ -11,6 +11,6 @@
 }
 .btnPerfil{
 	position: absolute;
-	top: 30px;
-	right: 25px;
+	top: 15px;
+	right: 15px;
 }

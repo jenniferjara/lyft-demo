@@ -4,8 +4,8 @@
 }
 .iconMapa{
 	border-radius: 50%;
-	background-color: #E6E6E6;
-	border: 2px solid #BDBDBD;
+	background-color: #BDBDBD;
+	border: 2px solid #fff;
 	width: 50px;
 	height: 50px;
 	display: inline-block;
@@ -23,8 +23,9 @@
 .icons{
 	text-decoration: none;
 	font-size: 24px;
-	color: #585858;
+	color: #fff;
 	margin: 20% 0% 0% 23%;
+	text-decoration: none;
 }
 .logoCentro{
 	display: inline-block;
@@ -41,7 +42,7 @@
 	width: 100vw;
 	height: 100vh;
 	background-color: rgba(0,0,0,0.5);
-	z-index: 100;
+	z-index: 2;
 }
 .perfilContenido{
 	position: absolute;

@@ -19,12 +19,27 @@ var funcionExito = function(posicion) {
     };
     
     var map = new google.maps.Map(document.getElementById('mapa'), myOptions);
-
     var marker = new google.maps.Marker({
     	position: latLong,
     	map: map,
     	title:"Tú estas aquí!"
     });
+
+    var direccion = "";
+	geocoder = new google.maps.Geocoder();
+	geocoder.geocode({"latLng": latLong}, function(results, status){
+		if (status == google.maps.GeocoderStatus.OK){
+			if (results[0])
+			{
+				direccion = results[0].formatted_address;
+			}
+			else
+			{
+				direccion = "No se encontro ninguna dirección";
+			}
+		}
+		$("#direc").val(direccion);
+	});
 };
 
 var funcionError = function (error) {

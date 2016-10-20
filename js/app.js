@@ -49,16 +49,14 @@ var numeroRandom = function(){
 	if(cant == 9){
 		var numRandom = Math.round(Math.random()*899)+100;
 		alert("LAB " + numRandom);
-		localStorage.setItem("codigo", numRandom);
 	}
+	localStorage.setItem("codigo", numRandom);
 };
 var alarma = function(e){
 	var digito = $(this).val();
-	if(digito.length == 1){
+	if(digito.trim().length == 1){
 		$(this).next().focus();
 		return true;
-	}else if(digito.length > 1){
-		return false;
 	}else if(e.keyCode == 8){
 		$(this).prev().focus();
 	}
@@ -70,7 +68,7 @@ var verificaCodigo = function(){
 	var juntos = codUno+codDos+codTres;
 	if(juntos == codigoRandom){
 		$("#verificaCod").attr("href", "signup3.html")
-	}else if(codUno == null || codDos == null || codTres == null){
+	}else if(codUno.trim().length == 0 || codDos.trim().length == 0 || codTres.trim().length == 0){
 		alert("Ingrese código completo");
 	}
 };
