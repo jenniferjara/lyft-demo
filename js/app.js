@@ -83,12 +83,12 @@ var validarDatos = function(e){
 	localStorage.setItem("nombreUsuario", nombreUser);
 
 	var apellidoUser = $("#apellido").val();
-	var longApellido = apellidoUser.trim().length;
+	var longApellido = apellidoUser.length;
 	var resultApellido = regexApellido.test(apellidoUser);
 	localStorage.setItem("apellidoUsuario", apellidoUser);
 
 	var mailUser = $("#mail").val();
-	var longMail = mailUser.trim().length;
+	var longMail = mailUser.length;
 	var resultMail = regexCorreo.test(mailUser);
 	localStorage.setItem("correoUsuario", mailUser);
 	var agree = $("#checkAgree");
