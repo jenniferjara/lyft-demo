@@ -2,6 +2,7 @@ var cargarPagina = function() {
 	if (navigator.geolocation) { 
 		navigator.geolocation.getCurrentPosition(funcionExito, funcionError);
 	}
+	$("#buscarDirec").click(nuevaDirec);
 };
 
 var funcionExito = function(posicion) {
@@ -10,7 +11,8 @@ var funcionExito = function(posicion) {
     var latLong = new google.maps.LatLng(lat, lon);
 	$("#mapa").addClass("mapa");
     var myOptions = {
-	    center: latLong,zoom:14,
+	    center: latLong,
+	    zoom:13,
 	    mapTypeId: google.maps.MapTypeId.ROADMAP,
 	    mapTypeControl: false,
 	    navigationControlOptions:{
@@ -18,30 +20,50 @@ var funcionExito = function(posicion) {
 	   	}
     };
     
-    var map = new google.maps.Map(document.getElementById('mapa'), myOptions);
+    var map = new google.maps.Map(document.getElementById("mapa"), myOptions);
     var marker = new google.maps.Marker({
     	position: latLong,
-    	map: map,
-    	title:"Tú estas aquí!"
+    	map: map
     });
 
     var direccion = "";
-	geocoder = new google.maps.Geocoder();
-	geocoder.geocode({"latLng": latLong}, function(results, status){
-		if (status == google.maps.GeocoderStatus.OK){
-			if (results[0])
-			{
+	var geocoder = new google.maps.Geocoder();
+	geocoder.geocode({"latLng": latLong}, mostrarDirec);
+};
+var mostrarDirec = function(results, status){
+	if (status == google.maps.GeocoderStatus.OK){
+			if (results[0]){
 				direccion = results[0].formatted_address;
 			}
-			else
-			{
+			else{
 				direccion = "No se encontro ninguna dirección";
 			}
 		}
 		$("#direc").val(direccion);
-	});
 };
+var nuevaDirec = function(){
+	var nuevaEntrada = $("#direc").val();
+	var geocoder = new google.maps.Geocoder();
+	geocoder.geocode({"address": nuevaEntrada}, nuevResult);
+};
+var nuevResult = function(results, status){
+	if (status == google.maps.GeocoderStatus.OK){
+		var newMap = {
+			center: results[0].geometry.location,
+			zoom:20, 
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+		};
 
+		var mapa = new google.maps.Map(document.getElementById("mapa"), newMap);
+		mapa.fitBounds(results[0].geometry.viewport);
+
+		var markerOptions = {
+			position: results[0].geometry.location
+		}
+        var marker = new google.maps.Marker(markerOptions);
+        marker.setMap(mapa);
+	}
+};
 var funcionError = function (error) {
 	alert("Error");
 };
