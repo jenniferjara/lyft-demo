@@ -63,6 +63,7 @@ var nuevResult = function(results, status){
         var marker = new google.maps.Marker(markerOptions);
         marker.setMap(mapa);
 	}
+	$("#direc").val(results[0].formatted_address);
 };
 var funcionError = function (error) {
 	alert("Error");
